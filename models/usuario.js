@@ -35,7 +35,8 @@ const UsuarioSchema = Schema({
 
 // Para excluir atributos o campos al momento de insertar en mongo, se usa el operador rest ... para almacenar el resto en una variable
 UsuarioSchema.methods.toJSON = function () {
-    const { __v, password, ...usuario } = this.toObject();
+    const { __v, password, _id, ...usuario } = this.toObject();
+    usuario.uid = _id;
     return usuario;
 }
 
