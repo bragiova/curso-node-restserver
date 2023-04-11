@@ -33,6 +33,9 @@ const ProductoSchema = Schema({
         type: Boolean,
         default: true
     },
+    img: {
+        type: String
+    }
 });
 
 // Para excluir atributos o campos al momento de insertar en mongo, se usa el operador rest ... para almacenar el resto en una variable
